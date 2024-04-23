@@ -1,0 +1,12 @@
+docker run --rm -it -p 9900:8545 -v ${PWD}/data:/data ethereum/client-go:latest \
+    --datadir /data \
+    --allow-insecure-unlock \
+    --miner.etherbase 4bf9be0b315bfa73ce3b4d489d79b4cc7f26caf4 \
+    --mine \
+    --unlock "4bf9be0b315bfa73ce3b4d489d79b4cc7f26caf4" \
+    --http \
+    --http.addr "0.0.0.0" \
+    --http.port 8545 \
+    --http.corsdomain "*" \
+    --ipcdisable \
+    --http.api "admin,eth,debug,miner,net,txpool,personal,web3"
